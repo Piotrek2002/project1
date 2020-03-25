@@ -1,0 +1,61 @@
+<?xml	version="1.0"	encoding="UTF-8"?>
+<web-app>
+
+
+    <filter>
+        <filter-name>FilterTest1</filter-name>
+        <filter-class>
+            pl.coderslab.web.FilterTest1
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterTest1</filter-name>
+        <url-pattern>/ContactServlet</url-pattern>
+<!--        <dispatcher>REQUEST</dispatcher>-->
+<!--        <dispatcher>INCLUDE</dispatcher>-->
+<!--        <dispatcher>FORWARD</dispatcher>-->
+<!--        <dispatcher>ERROR</dispatcher>-->
+    </filter-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>pl.coderslab.web.EncodingFilter	</filter-class>
+        <init-param>
+            <param-name>charsetEncoding</param-name>
+            <param-value>UTF-8</param-value></init-param>
+        <init-param>
+            <param-name>contentType</param-name>
+            <param-value>text/html</param-value></init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterLoginToApp</filter-name>
+        <filter-class>
+            pl.coderslab.web.FilterLoginToApp
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterLoginToApp</filter-name>
+        <url-pattern>/RecipesServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterDashboard</filter-name>
+        <filter-class>pl.coderslab.web.FilterDashboard</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterDashboard</filter-name>
+        <url-pattern>/DashboardServlet</url-pattern>
+    </filter-mapping>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+
+
+</web-app>
